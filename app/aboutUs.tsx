@@ -13,6 +13,9 @@ export default function aboutUs() {
       <Text style={styles.text}>Developed by:</Text>
       <Image source={require("../assets/last.png")} style={styles.lastImage} />
       <Text style={styles.text}> Version 1.0</Text>
+      <Text style={styles.text}>
+        github : https://github.com/gabrielalustosa/carinfo.git
+      </Text>
     </View>
   );
 }
