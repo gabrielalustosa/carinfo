@@ -2,7 +2,6 @@ import { View, Text, Button, TouchableOpacity } from "react-native";
 import React from "react";
 import { useActionSheet } from "@expo/react-native-action-sheet";
 import { router, useRouter, usePathname } from "expo-router";
-import aboutUs from "../app/aboutUs";
 import { Feather } from "@expo/vector-icons";
 
 export default function Options() {
@@ -41,6 +40,7 @@ export default function Options() {
             }
           )
         }
+        testID="options-menu"
       >
         <Feather name="menu" size={24} color="black" />
       </TouchableOpacity>

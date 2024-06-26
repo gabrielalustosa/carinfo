@@ -5,9 +5,10 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
+  Button,
+  Alert,
 } from "react-native";
 import React, { useState } from "react";
-import imagebutton from "../assets/imagebutton.png";
 import { useRouter } from "expo-router";
 
 export default function Login() {
@@ -19,8 +20,13 @@ export default function Login() {
     if (password == "123" && username == "teste") router.push("/main");
   };
 
+  React.useEffect(() => {
+    Alert.alert("Bem-Vindo!");
+  }, []);
+
   return (
     <View>
+      <Text style={style.Text}>Mobile - Avaliação 2</Text>
       <TextInput
         value={username}
         style={style.textbox}
@@ -40,7 +46,7 @@ export default function Login() {
         <Image
           source={require("../assets/imagebutton.png")}
           style={style.button}
-        />
+        />{" "}
       </TouchableOpacity>
     </View>
   );
@@ -60,5 +66,10 @@ const style = StyleSheet.create({
     marginBottom: 40,
     borderRadius: 8,
     alignSelf: "center",
+  },
+  Text: {
+    alignSelf: "center",
+    color: "#c8c8c8",
+    marginBottom: 40,
   },
 });

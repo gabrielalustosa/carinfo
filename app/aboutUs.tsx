@@ -1,7 +1,12 @@
-import { View, Text, StyleSheet, Image } from "react-native";
-import Logo from "../components/Logo";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Linking,
+} from "react-native";
 import React from "react";
-import last from "../assets/last.png";
 import { useNavigation } from "@react-navigation/native";
 import { useRoute } from "@react-navigation/native";
 
@@ -13,9 +18,16 @@ export default function aboutUs() {
       <Text style={styles.text}>Developed by:</Text>
       <Image source={require("../assets/last.png")} style={styles.lastImage} />
       <Text style={styles.text}> Version 1.0</Text>
-      <Text style={styles.text}>
-        github : https://github.com/gabrielalustosa/carinfo.git
-      </Text>
+      <TouchableOpacity
+        onPress={() =>
+          Linking.openURL("https://github.com/gabrielalustosa/carinfo.git")
+        }
+        testID="github-link"
+      >
+        <Text style={[styles.text, styles.link]}>
+          https://github.com/gabrielalustosa/carinfo.git
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -33,7 +45,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text: {
-    fontSize: 20,
+    fontSize: 15,
     fontWeight: "bold",
+  },
+  link: {
+    color: "blue",
+    textDecorationLine: "underline",
   },
 });

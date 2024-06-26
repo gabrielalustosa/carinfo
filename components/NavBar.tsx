@@ -1,11 +1,9 @@
 import { View, Text, StyleSheet, Image } from "react-native";
-import Logo from "../components/Logo";
 import { Stack } from "expo-router";
 import React from "react";
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import { connectActionSheet } from "@expo/react-native-action-sheet";
 import Options from "./Options";
-import { useState } from "react";
 
 function NavBar() {
   return (
